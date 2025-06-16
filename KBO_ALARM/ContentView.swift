@@ -8,15 +8,31 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
-    }
+	@State private var myTeam: Team? = nil
+
+	var body: some View {
+		VStack {
+			Text("KBO 팀을 선택하세요")
+				.font(.title2)
+				.fontWeight(.semibold)
+				.padding(.top, 16)
+
+			ScrollView {
+				VStack(spacing: 20) {
+					ForEach(0..<kboTeams.count) { index in
+						Text("\(kboTeams[index].name)")
+							.frame(maxWidth: .infinity)
+							.padding()
+							.background(kboTeams[index].color)
+							.foregroundColor(.white)
+							.cornerRadius(12)
+							.padding(.horizontal)
+					}
+				}
+				.padding()
+			}
+		}
+	}
 }
 
 #Preview {
