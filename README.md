@@ -11,7 +11,7 @@ KBO_ALARM은 야구는 놓치기 싫지만, 일도 놓치면 안 되는 크보�
 * 🕰 실시간 중계 연동
 * ⚙️ 알람 설정 ON/OFF 토글
 
-# ⚙️ 사용 기술 스택
+## ⚙️ 사용 기술 스택
 * Swift / SwiftUI (Client)
 * TBD (Push Notification)
 * TBD (Backend)
