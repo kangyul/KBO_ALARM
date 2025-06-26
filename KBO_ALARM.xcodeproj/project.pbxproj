@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		28F082762E04377C003D8082 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 28F082752E04377C003D8082 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		287B0E2B2DF7D432007431E1 /* KBO_ALARM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KBO_ALARM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		28F082752E04377C003D8082 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -34,6 +39,7 @@
 			children = (
 				287B0E2D2DF7D432007431E1 /* KBO_ALARM */,
 				287B0E2C2DF7D432007431E1 /* Products */,
+				28F082752E04377C003D8082 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F082762E04377C003D8082 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
