@@ -51,6 +51,19 @@ struct ContentView: View {
 				}
 				.padding()
 			}
+
+			if let selectedTeam = myTeam {
+				Button(action: {
+					print("confirm Button pressed")
+				}) {
+					Text("팀 선택 완료")
+						.font(.headline)
+						.foregroundColor(.white)
+						.padding()
+						.background(Color.blue)
+						.cornerRadius(10)
+				}
+			}
 		}
 	}
 }
