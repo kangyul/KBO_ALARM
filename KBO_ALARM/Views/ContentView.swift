@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ContentView: View {
+	@State private var myTeam: Team? = nil
+	@State private var isConfirmed: Bool = false
+
 	var body: some View {
-		TeamSelectionView()
+		if isConfirmed, let team = myTeam {
+			MainView(myTeam: team)
+		} else {
+			TeamSelectionView(myTeam: $myTeam, isConfirmed: $isConfirmed)
+		}
 	}
 }
 

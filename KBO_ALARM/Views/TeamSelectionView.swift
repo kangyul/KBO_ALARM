@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct TeamSelectionView: View {
-	@State private var myTeam: Team? = nil
+	@Binding var myTeam: Team?
+	@Binding var isConfirmed: Bool
 
 	let columns = [
 		GridItem(.flexible()),
@@ -52,9 +53,9 @@ struct TeamSelectionView: View {
 				.padding()
 			}
 
-			if let selectedTeam = myTeam {
+			if myTeam != nil {
 				Button(action: {
-					print("confirm Button pressed")
+					isConfirmed = true
 				}) {
 					Text("팀 선택 완료")
 						.font(.headline)
@@ -69,5 +70,16 @@ struct TeamSelectionView: View {
 }
 
 #Preview {
-	TeamSelectionView()
+	// Step 1: @State로 임시 상태 만들고
+	struct PreviewWrapper: View {
+		@State var selectedTeam: Team? = nil
+		@State var isConfirmed: Bool = false
+
+		var body: some View {
+			TeamSelectionView(myTeam: $selectedTeam, isConfirmed: $isConfirmed)
+		}
+	}
+
+	// Step 2: 래퍼 뷰를 리턴
+	return PreviewWrapper()
 }
