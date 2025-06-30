@@ -12,8 +12,8 @@ struct ContentView: View {
 	@State private var isConfirmed: Bool = false
 
 	var body: some View {
-		if isConfirmed, let team = myTeam {
-			MainView(myTeam: team)
+		if isConfirmed, myTeam != nil {
+			MainView(myTeam: $myTeam, isConfirmed: $isConfirmed)
 		} else {
 			TeamSelectionView(myTeam: $myTeam, isConfirmed: $isConfirmed)
 		}

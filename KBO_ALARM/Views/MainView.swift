@@ -8,15 +8,24 @@
 import SwiftUI
 
 struct MainView: View {
-	let myTeam: Team
+	@Binding var myTeam: Team?
+	@Binding var isConfirmed: Bool
 
 	var body: some View {
 		VStack {
-			Text("세계 최고의 야구팀: \(myTeam.name)!!!")
+			HStack {
+				Button(action: {
+					myTeam = nil
+					isConfirmed = false
+				}) {
+					Image(systemName: "house")
+						.font(.system(size: 30))
+						.padding(.leading)
+				}
+
+				Spacer()
+			}
+			Text("세계 최고의 야구팀: \(myTeam?.name)!!!")
 		}
 	}
-}
-
-#Preview {
-	MainView(myTeam: Team(id: 1, name: "LG 트윈스", color: Color(red: 165/256, green: 0, blue: 52/256), logo: "5002"))
 }
